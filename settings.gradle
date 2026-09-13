@@ -12,6 +12,4 @@ dependencyResolutionManagement {
         mavenCentral()
     }
 }
-
-rootProject.name = "IPTVFreeApp"
-include ':app'
+rootProject.name = "Ali-IPTV"
