@@ -3,7 +3,6 @@ plugins {
     id 'org.jetbrains.kotlin.android' version '1.9.24' apply false
 }
 
-// تطبيق البلاجين على المشروع
 apply plugin: 'com.android.application'
 apply plugin: 'kotlin-android'
 
@@ -17,6 +16,15 @@ android {
         targetSdk 34
         versionCode 1
         versionName "1.0"
+    }
+
+    // توجيه Gradle للبحث عن ملف المانفيست والأكواد في المسار الرئيسي
+    sourceSets {
+        main {
+            manifest.srcFile 'AndroidManifest.xml'
+            java.srcDirs = ['java', 'kotlin', '.']
+            res.srcDirs = ['res']
+        }
     }
 
     buildTypes {
