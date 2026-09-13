@@ -16,22 +16,20 @@ jobs:
       - name: تجهيز Java 17
         uses: actions/setup-java@v4
         with:
-          distribution: temurin
+          distribution: 'temurin'
           java-version: '17'
 
-      - name: تجهيز Android SDK
-        uses: android-actions/setup-android@v3
+      - name: منح صلاحية التشغيل لـ Gradle Wrapper
+        run: chmod +x gradlew
 
       - name: تجهيز Gradle
         uses: gradle/actions/setup-gradle@v4
-        with:
-          gradle-version: '8.7'
 
       - name: بناء APK (Debug)
-        run: gradle assembleDebug --no-daemon
+        run: ./gradlew assembleDebug --no-daemon
 
       - name: رفع الملف الناتج كـ Artifact
         uses: actions/upload-artifact@v4
         with:
           name: app-debug-apk
-          path: app/build/outputs/apk/debug/app-debug.apk
+          path: build/outputs/apk/debug/*.apk
