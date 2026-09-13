@@ -17,10 +17,9 @@ android {
 
     sourceSets {
         main {
-            // توجيه Gradle للبحث عن المانفيست داخل مجلد app
             manifest.srcFile 'app/AndroidManifest.xml'
-            java.srcDirs = ['app/src/main/java', 'app/src', 'app']
-            res.srcDirs = ['app/src/main/res', 'app/res']
+            java.srcDirs = ['app/src/main/java']
+            res.srcDirs = ['app/src/main/res']
         }
     }
 
@@ -34,9 +33,4 @@ dependencies {
     implementation 'androidx.core:core-ktx:1.12.0'
     implementation 'androidx.appcompat:appcompat:1.6.1'
     implementation 'com.google.android.material:material:1.11.0'
-
-    // مكتبات تشغيل الفيديو للبث المباشر (ExoPlayer Media3)
-    implementation 'androidx.media3:media3-exoplayer:1.3.1'
-    implementation 'androidx.media3:media3-exoplayer-hls:1.3.1'
-    implementation 'androidx.media3:media3-ui:1.3.1'
 }
