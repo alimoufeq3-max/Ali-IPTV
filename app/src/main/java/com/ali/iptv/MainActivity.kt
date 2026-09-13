@@ -8,11 +8,10 @@ class MainActivity : Activity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
-        val textView = TextView(this).apply {
-            text = "مرحباً بك في Ali IPTV"
-            textSize = 24f
-            setPadding(60, 60, 60, 60)
-        }
+        val textView = TextView(this)
+        textView.text = "مرحباً بك في Ali IPTV"
+        textView.textSize = 26f
+        textView.setPadding(100, 100, 100, 100)
 
         setContentView(textView)
     }
