@@ -19,14 +19,11 @@ jobs:
           distribution: 'temurin'
           java-version: '17'
 
-      - name: منح صلاحية التشغيل لـ Gradle Wrapper
-        run: chmod +x gradlew
-
       - name: تجهيز Gradle
         uses: gradle/actions/setup-gradle@v4
 
       - name: بناء APK (Debug)
-        run: ./gradlew assembleDebug --no-daemon
+        run: gradle assembleDebug --no-daemon
 
       - name: رفع الملف الناتج كـ Artifact
         uses: actions/upload-artifact@v4
